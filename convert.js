@@ -3,8 +3,6 @@ const cio = require('cheerio');
 const data = fs.readFileSync(0, 'utf-8');
 const $ = cio.load(data);
 
-console.log("Flowchart is: ", flowchart);
-
 for (let i = 0; i <= 4; i++) {
     $('h' + i).each(function () {
         $(this).attr('id', null);

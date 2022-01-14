@@ -10,4 +10,4 @@ all: $(HTML_FILES)
 	
 .PHONY:
 clean:
-	find . -not \( -path ./node_modules -prune \) -type f -name '*.html' -exec rm {} \;ß
+	find . -not \( -path ./node_modules -prune \) -type f -name '*.html' -exec rm {} \;
