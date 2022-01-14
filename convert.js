@@ -1,5 +1,7 @@
 const fs = require('fs');
 const cio = require('cheerio');
+const decode = require('unescape');
+const { spawnSync } = require('child_process');
 const data = fs.readFileSync(0, 'utf-8');
 const $ = cio.load(data);
 
@@ -78,6 +80,17 @@ for (let pre of pres) {
         ${$.html(pre)}
         </div>
         `);
+    } else if ($(code).hasClass('language-mermaid')) {
+        let diagramSrc = decode($(code).html());
+        if (!fs.existsSync("build")) {
+            fs.mkdirSync("build");
+        }
+        fs.writeFileSync("build/tmp.mm", diagramSrc);
+
+        spawnSync("./node_modules/.bin/mmdc", ["-i", "build/tmp.mm", "-o", "build/tmp.svg"]);
+
+        let svgSrc = fs.readFileSync("build/tmp.svg", 'utf-8');
+        $(pre).replaceWith(svgSrc);
     } else {
         console.error('ダメだったんだ, あの言語知らんのだ', $(pre).html());
         return;

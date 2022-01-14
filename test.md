@@ -39,6 +39,16 @@ h1 {
 }
 ```
 
+```mermaid
+stateDiagram-v2
+    [*] --> Still
+    Still --> [*]
+    Still --> Moving
+    Moving --> Still
+    Moving --> Crash
+    Crash --> [*]
+```
+
 ## JavaScript関連記事
 <!-- 記事カードリンク -->
 <a clink src="https://tcd-theme.com/2021/12/javascript-jest.html">記事1です</a>

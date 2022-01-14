@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "@mermaid-js/mermaid-cli": "^8.13.7",
     "cheerio": "^1.0.0-rc.10",
     "diagrams": "^0.11.0",
-    "marked": "^4.0.7"
+    "marked": "^4.0.7",
+    "unescape": "^1.0.1"
   }
 }
