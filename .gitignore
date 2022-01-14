@@ -1,0 +1,9 @@
+# Ignore npm files and folders.
+node_modules/
+build/
+npm-debug.log
+.env
+.DS_Store
+
+# Ignore html output files.
+*.html
