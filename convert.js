@@ -87,7 +87,7 @@ for (let pre of pres) {
         }
         fs.writeFileSync("build/tmp.mm", diagramSrc);
 
-        spawnSync("./node_modules/.bin/mmdc", ["-i", "build/tmp.mm", "-o", "build/tmp.svg"]);
+        spawnSync("./node_modules/.bin/mmdc", ["-w", "790", "-i", "build/tmp.mm", "-o", "build/tmp.svg"]);
 
         let svgSrc = fs.readFileSync("build/tmp.svg", 'utf-8');
         $(pre).replaceWith(svgSrc);
