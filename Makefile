@@ -1,4 +1,4 @@
-MD_FILES := $(shell find . -not \( -path ./node_modules -prune \) -type f -name '*.md')
+MD_FILES := $(shell find ./articles -not \( -path ./node_modules -prune \) -type f -name '*.md')
 HTML_FILES := $(patsubst %.md,%.html,$(MD_FILES))
 
 .PHONY:
@@ -10,4 +10,4 @@ all: $(HTML_FILES)
 	
 .PHONY:
 clean:
-	find . -not \( -path ./node_modules -prune \) -type f -name '*.html' -exec rm {} \;
+	find ./articles -not \( -path ./node_modules -prune \) -type f -name '*.html' -exec rm {} \;
