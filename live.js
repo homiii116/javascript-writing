@@ -24,6 +24,7 @@ let liveServerOpts = {
     port: 8105, // Set the server port. Defaults to 8080.
     open: true, // When false, it won't load your browser by default.
     wait: 100, // Waits for all changes, before reloading. Defaults to 0 sec.
+    root: './articles', // Set root directory that's being served. Defaults to cwd.
 }
 watch.createMonitor('.', watchOpts, function (monitor) {
     monitor.on("created", function (f) {
