@@ -8,8 +8,5 @@ npm-debug.log
 .env
 .DS_Store
 
-# Ignore html output files.
-*.html
-
 # Ignore test file main.js
 /articles/main.js

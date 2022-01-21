@@ -9,5 +9,9 @@ all: $(HTML_FILES)
 	./node_modules/.bin/marked $< | node convert.js > $@
 	
 .PHONY:
+live:
+	node live.js
+
+.PHONY:
 clean:
 	find ./articles -not \( -path ./node_modules -prune \) -type f -name '*.html' -exec rm {} \;
