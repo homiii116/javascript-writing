@@ -6,7 +6,7 @@ all: $(HTML_FILES)
 	@echo "終わったんだ"
 
 %.html: %.md
-	./node_modules/.bin/marked $< | node convert.js > $@
+	node convert.js $< > $@
 	
 .PHONY:
 live:

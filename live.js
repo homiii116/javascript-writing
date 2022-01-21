@@ -2,16 +2,24 @@ const fs = require('fs');
 const path = require('path');
 const watch = require('watch');
 const { marked } = require('marked');
+const frontMatter = require('front-matter');
 const liveServer = require("live-server");
 const convert = require('./convert');
 
 function markdownChanged(file) {
-    const markdown = fs.readFileSync(file, 'utf-8');
+    const rawMarkdown = fs.readFileSync(file, 'utf-8');
     const template = fs.readFileSync('preview-template.html', 'utf-8');
 
-    const rawPostHtml = marked.parse(markdown);
+    const markdown = frontMatter(rawMarkdown);
+    const rawPostHtml = marked.parse(markdown.body);
     const postHtml = convert(rawPostHtml);
-    const previewHtml = template.replace("{{POST_CONTENT}}", postHtml);
+    let previewHtml = template.replace("{{POST_CONTENT}}", postHtml);
+    
+    // Replace template with front matter attributes.
+    const params = markdown.attributes;
+    for (const name in params) {
+        previewHtml = previewHtml.replaceAll(`{{PARAM:${name}}}`, String(params[name]));
+    }
 
     const filename = path.basename(file, '.md') + '.preview.html';
     fs.writeFileSync(path.join(path.dirname(file), filename), previewHtml);
@@ -38,5 +46,4 @@ watch.createMonitor('.', watchOpts, function (monitor) {
         }
     });
     liveServer.start(liveServerOpts);
-    console.log("DONE!");
 })

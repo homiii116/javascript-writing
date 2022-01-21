@@ -1,6 +1,8 @@
 const fs = require('fs');
 const cio = require('cheerio');
 const decode = require('unescape');
+const { marked } = require('marked');
+const frontMatter = require('front-matter');
 const { spawnSync } = require('child_process');
 
 function convert(input) {
@@ -104,6 +106,9 @@ module.exports = convert;
 
 // Executed if the file is run directly using e.g. 'node convert.js'.
 if (typeof require !== 'undefined' && require.main === module) {
-    const data = fs.readFileSync(0, 'utf-8');
-    console.log(convert(data));
+    let filepath = process.argv[2];
+    const data = fs.readFileSync(filepath, 'utf-8');
+    const markdown = frontMatter(data);
+    const rawHtml = marked.parse(markdown.body);
+    console.log(convert(rawHtml));
 }
