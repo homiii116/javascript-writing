@@ -164,4 +164,7 @@ letとconstの使い分け方は、以下の記事を参考にしてみてくだ
 これらのポイントを意識して、今後の変数の活用に役立ててください。
 
 ### JavaScript関連記事
-<a clink src="https://tcd-theme.com/2022/02/javascript-variable-rule.html"></a>
+<a clink src="https://tcd-theme.com/2022/02/javascript-string.html"></a>
+<a clink src="https://tcd-theme.com/2022/02/javascript-number.html"></a>
+<a clink src="https://tcd-theme.com/2022/02/javascript-boolean.html"></a>
+<a clink src="https://tcd-theme.com/2022/02/javascript-null-undefined.html"></a>
