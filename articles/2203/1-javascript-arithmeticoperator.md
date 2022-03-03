@@ -1,4 +1,4 @@
-# 【JavaScriptの入門】算術演算子と二項/単項演算子
+# 【JavaScriptの入門】算術演算子
 
 多くの演算子は学校などで既に学んでおり、プログラミングの場でも直感的に使用しやすいものがあります。例えば、加算「+」や減算「-」などの算術演算子です。
 
@@ -192,7 +192,8 @@ console.log(num); // 0
 *単項演算子（単項プラス/マイナス、インクリメント/デクリメント）
 ```
 
-まずはキーワードを頭に入れ、それぞれの役割は使いながら覚えていくと良いでしょう。
+まずはキーワードを頭に入れ、実際に使いながらそれぞれの役割を覚えていきましょう。
 
 ### JavaScript関連記事
-<a clink src=""></a>
+<a clink src="https://tcd-theme.com/2021/05/javascript-operator.html"></a>
+<a clink src="https://tcd-theme.com/2022/02/javascript-operator-priority.html"></a>
