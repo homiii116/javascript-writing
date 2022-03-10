@@ -21,6 +21,10 @@ JavaScriptでは、複数の条件に対して、対象とするものが真で�
 ### AND演算子（&&）
 AND演算子は、前と後ろのオペランド両方が真の場合trueを返し、そうでない場合はfalseを返します。
 ```javascript
+オペランド && オペランド
+```
+
+```javascript
 console.log(true && true); // true
 console.log(true && false); // false
 console.log(false && true); // false
@@ -59,6 +63,10 @@ if (age > 6 && height > 128) { // true && true　として評価される
 ### OR演算子（||）
 OR演算子は、前または後ろのオペランドの少なくとも一つが真の場合trueを返し、そうでない場合falseを返します。
 ```javascript
+オペランド || オペランド
+```
+
+```javascript
 console.log(true || true); // true
 console.log(true || false); // true
 console.log(false || true); // true
@@ -94,6 +102,9 @@ if (scoreA >= 80 || scoreB >= 70) { // true || false として評価される
 ### NOT演算子（!）
 NOT演算子は、オペランドが真であればfalseを返し、オペランドが偽であればtrueを返します。
 つまり、オペランドの評価結果を反転した真偽値を返すと言うことです。
+```javascript
+!オペランド
+```
 ```javascript
 console.log(!true); // false
 console.log(!false); // true
@@ -216,7 +227,7 @@ console.log(undefined || '後ろのオペランド'); // "後ろのオペラン�
 
 
 ### JavaScript関連記事
-<a clink src="https://tcd-theme.com/2022/02/javascript-operator-priority.html"></a>
+<a clink src="https://tcd-theme.com/2022/03/javascript-operator-priority.html"></a>
 <a clink src="https://tcd-theme.com/2022/03/javascript-arithmeticoperator.html"></a>
 <a clink src="https://tcd-theme.com/2022/03/javascript-assignmentoperator.html"></a>
 <a clink src="https://tcd-theme.com/2022/03/javascript-comparisonoperator.html"></a>

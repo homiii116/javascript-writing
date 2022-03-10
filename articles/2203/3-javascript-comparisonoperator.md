@@ -166,6 +166,6 @@ console.log(null != 0); // true
 ここでポイントをおさえて理解を深めていきましょう。
 
 ### JavaScript関連記事
-<a clink src="https://tcd-theme.com/2022/02/javascript-operator-priority.html"></a>
+<a clink src="https://tcd-theme.com/2022/03/javascript-operator-priority.html"></a>
 <a clink src="https://tcd-theme.com/2022/03/javascript-arithmeticoperator.html"></a>
 <a clink src="https://tcd-theme.com/2022/03/javascript-assignmentoperator.html"></a>
