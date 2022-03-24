@@ -21,9 +21,10 @@ switch (式) {
     break;
   default:
     式がどのcaseにも一致しない場合に実行する処理;
-    break;
 }
 ```
+
+** switch画像
 
 以下の例を見てみましょう。
 ```javascript
