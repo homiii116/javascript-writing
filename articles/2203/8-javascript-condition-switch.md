@@ -1,14 +1,24 @@
 # 【JavaScriptの入門】条件分岐：switch文
 
-JavaScriptの条件分岐には、switch文を使った手法があります。
-これは、対象の値が複数のパターンのいずれかと一致するか否かによって、処理を分ける方法です。
+JavaScriptの条件分岐にはif文とswitch文が使われていますが、実際にこのように感じたことはありませんか？
 
-今回は、switch文による条件分岐の使い方を解説していきます。
+「if文とswitch文の違いって何？」
+「switch文の使いどころが分からない」
 
-## switch文
+一般的によく目にするのがif文ですが、場合によってはswitch文を使う方が可読性が上がることがあります。
+
+今回は、switch文の基本構文をはじめとし、if文との違いを分かりやすく解説していきます。
+
+
+## switch文とは
 switch文は、if文と同様に式の評価結果に基づいて条件分岐を行います。
 対象の値を複数のパターンと比較する点が特徴で、かんたんに言えば、複数のif文を持つようなイメージです。
 
+条件を真（true）と偽（false）に分けて、それぞれ処理を与えるのがif文ですが、複数条件がある場合には、switch文を使うことでコードがシンプルで読みやすくなるメリットがあります。
+
+それではswitch文の書き方を見ていきましょう。
+
+## switch文の基本構文
 以下がswitch文の基本構文です。
 switch文は、1つ以上のcaseと任意でdefault文を持ちます。
 ```javascript
@@ -196,13 +206,11 @@ console.log(getCity('Tokyo')); // "日本の首都です"
 ## まとめ
 今回は、switch文による条件分岐について解説しました。
 
-```plain
-// ポイント
-* switch文は、複数のパターンから一致する値を見つけ、処理を実行する
-* caseとdefault文で条件分岐した処理を扱う
-* caseにbreak文を記述しない場合、その先のcaseの処理が実行される
-```
+JavaScriptでプログラミングを行う際に、switch文を使いこなせるようになると非常に便利です。
+多くの条件を設定するときにはswitch文を取り入れることで、メンテナンス性や可読性を上げることができます。
+
+if文で書いた条件分岐をswitch文に書き換えてみることで、switch文の理解をより深めることができるので、ぜひ練習してみてください。
+switch文の基本をおさえてから、条件分岐のテクニックを磨いていきましょう。
 
 ### JavaScript関連情報
-<a clink src="https://tcd-theme.com/2021/04/javascript-switch.html"></a>
-<a clink src="https://tcd-theme.com/2022/03/javascript-condition-if.html"></a>
+<a clink src="https://tcd-theme.com/2021/04/javascript-if.html"></a>
