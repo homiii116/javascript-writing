@@ -1,1 +1,1 @@
-【JavaScriptの入門】関数と引数
+# 【JavaScriptの入門】関数と引数
