@@ -1,1 +1,0 @@
-【JavaScriptの入門】関数宣言
