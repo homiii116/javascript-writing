@@ -1,7 +1,7 @@
 # 【JavaScriptの入門】関数と宣言
 
 関数を使うと一連の手続きを一つにまとめることができます。
-何度も同じ処理を書く必要は無く、一度関数を定義してしまえば必要な箇所でその関数を何度も呼び出すことができます。
+何度も同じ処理を書く必要は無く、一度関数を定義してしまえば必要な箇所でその関数を何度も再利用することができます。
 
 例えば、Console APIの```console.log```も関数の一つです。
 ```console.log```は、引数に記述された値をコンソールに表示するための処理をまとめたものです。
@@ -42,7 +42,7 @@ function showMessage() {
 function showMessage() {
   console.log('Hello!');
   console.log('こんにちは!');
-  console.log('¡Hola!')
+  console.log('¡Hola!');
 }
  ```
 
@@ -64,7 +64,8 @@ function showMessage() {
   console.log('Hello!');
 }
 // 関数の呼び出し
-showMessage(); // "Hello!"
+showMessage(); 
+// "Hello!"
 ```
 関数を呼び出すことで、関数の中に記述してある```console.log('Hello!')```を実行できます。
 
@@ -74,8 +75,10 @@ function showMessage() {
   console.log('Hello!');
 }
 
-showMessage(); // "Hello!"
-showMessage(); // "Hello!"
+showMessage(); 
+// "Hello!"
+showMessage(); 
+// "Hello!"
 ```
 
 すでに関数で処理をまとめているため、後でメッセージ内容を変更する必要が出た場合、関数の中のコード1箇所を修正するだけで済みます。
@@ -84,8 +87,10 @@ function showMessage() {
   console.log('Thank you!'); // 1箇所の修正で済む
 }
 
-showMessage(); // "Thank you!"
-showMessage(); // "Thank you!"
+showMessage(); 
+// "Thank you!"
+showMessage(); 
+// "Thank you!"
 ```
 
 関数に定義していなければ、必要な分だけ修正が必要です。
