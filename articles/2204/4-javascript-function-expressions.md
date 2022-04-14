@@ -59,8 +59,7 @@ const sayHi = function() {
   console.log('Hello');
 };
 // 関数の呼び出し
-sayHi(); 
-// "Hello!"
+sayHi(); // "Hello!"
 ```
 
 このように関数を呼び出すことで、関数の中に記述してある```console.log('Hello!')```を実行できます。
@@ -122,6 +121,13 @@ console.log(total); // 15
 ```
 
 まずは構文をしっかり身に付けて、使い慣れていきましょう。
+
+## 合わせて読みたいJavaScript関数の関連記事
+第1回：[関数と宣言](https://tcd-theme.com/2022/04/javascript-function-declaration.html)
+第2回：[関数と引数](https://tcd-theme.com/2022/04/javascript-function-parameter-argument.html)
+第3回：[関数と戻り値](https://tcd-theme.com/2022/04/javascript-function-return.html)
+第4回：[関数式](https://tcd-theme.com/2022/04/javascript-function-expressions.html)（当記事）
+
 
 
 
