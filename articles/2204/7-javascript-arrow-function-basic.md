@@ -68,7 +68,7 @@ let funcA = () => {};
 // 仮引数が1つだけの場合
 let funcB = (x) => {};
 // または
-let funcC = x = {};
+let funcC = x => {};
 ```
 
 仮引数が2つ以上入る時は、通常の関数定義と同じように、括弧```()```の中に、必要な引数を記述します。
@@ -86,7 +86,7 @@ funcE = x => { return x * 2};
 funcF = x => x * 2;
 ```
 
-実行する処理が複数行ある場合、ブロック```{}```とreturn文が必要です。
+実行する処理が複数行ある場合、ブロック```{}```と```return```が必要です。
 ```javascript
 // 実行する処理が複数行ある場合
 funcG = (x, y) => { 
@@ -101,7 +101,7 @@ funcG = (x, y) => {
 ## アロー関数の例
 さいごに、上記で取り上げたいくつかのパターンを使って、実際のコードを見ていきましょう。
 
-* 引数無し＋処理が1行の場合
+引数無し＋処理が1行の場合
 ```javascript
 let sayHi = () => console.log('Hello!');
 
@@ -109,7 +109,7 @@ sayHi();
 // "Hello!"
 ```
 
-* 引数が1つのみ＋処理が1行の場合
+引数が1つのみ＋処理が1行の場合
 ```javascript
 let sayHi = name => console.log('Hello, ' + name);
 
@@ -117,7 +117,7 @@ sayHi('JavaScript');
 // "Hello, JavaScript"
 ```
 
-* 引数が複数＋処理が複数行の場合
+引数が複数＋処理が複数行の場合
 ```javascript
 let sayHi = (text, name) => {
   let message = console.log(text + name);
@@ -141,5 +141,13 @@ sayHi('How are you, ', 'JavaScript?');
 3. ブロック```{}```＋```return```あり：処理文が複数行ある場合
 4. ブロック```{}```＋```return```なし：処理文が1行のみの場合
 
+## 合わせて読みたいJavaScript関数の関連記事
+第1回：[関数と宣言](https://tcd-theme.com/2022/04/javascript-function-declaration.html)
+第2回：[関数と引数](https://tcd-theme.com/2022/04/javascript-function-parameter-argument.html)
+第3回：[関数と戻り値](https://tcd-theme.com/2022/04/javascript-function-return.html)
+第4回：[関数式](https://tcd-theme.com/2022/04/javascript-function-expressions.html)
+第5回：[関数オブジェクト](https://tcd-theme.com/2022/04/javascript-function-is-object.html)
+第6回：[argumentsオブジェクト](https://tcd-theme.com/2022/04/javascript-arguments-object.html)
+第7回：[アロー関数](https://tcd-theme.com/2022/04/javascript-arrow-function-basic.html)（当記事）
 
 
