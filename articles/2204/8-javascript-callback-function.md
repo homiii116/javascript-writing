@@ -53,4 +53,40 @@ funcA(funcB);
 // "こんにちは"
 // "メッセージを受け取りました"
 ```
+```funcA```という高階関数の呼び出し時に、```funcB```というコールバック関数を指定しています。
+そして、```funcA```の中では、```text```という引数で扱われています。
+```text()```により、```funcB```内に記述した処理が行われます。
 
+上記はもっとも基本形である関数宣言によるものですが、関数式やアロー関数を使うこともできます。
+同じコードを関数式とアロー式それぞれで表現するとこのようになります。
+```javascript
+// 関数式
+const funcA = function(text) {
+  text();
+  console.log('メッセージを受け取りました');
+};
+
+const funcB = function() {
+  console.log('こんにちは');
+};
+
+funcA(funcB);
+
+// "こんにちは"
+// "メッセージを受け取りました"
+```
+
+```javascript
+// アロー関数
+const funcA = text => {
+  text();
+  return console.log('メッセージを受け取りました');
+};
+
+const funcB = () => console.log('こんにちは');
+
+funcA(funcB);
+
+// "こんにちは"
+// "メッセージを受け取りました"
+```
