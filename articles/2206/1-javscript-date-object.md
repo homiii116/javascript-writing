@@ -12,16 +12,16 @@ JavaSCriptにはビルドインオブジェクトがいくつかありますが�
 Dateオブジェクトをインスタンス化することで、特定の時刻を表すオブジェクトを作成することができます。
 Dateオブジェクトにおける時刻は、協定世界時(UTC)である1970年1月1日0時0分0秒が基準となっています。
 
-得られた時刻を元に、さまざまなメソッドを使うことで年や月、時刻などへアクセスすることができます。
+得られた時刻を元に、さまざまなメソッドを使って年や月などの特定の要素へアクセスすることができます。
 
 ## Dateオブジェクトの作成
 Dateオブジェクトを作成するには、```new Date()```を呼びます。
 以下のいずれかのパターンを使うことで、Dateオブジェクトのインスタンスを生成することができます。
 
 * ```new Date()```
-* ```new Date(millisecounds)```
-* ```new Date(detestring)```
-* ```new Date(year, month, date, hours, minutes, secounds, ms)```
+* ```new Date(milliseconds)```
+* ```new Date(datestring)```
+* ```new Date(year, month, date, hours, minutes, seconds, ms)```
 
 引数の指定が異なるため、一つずつ見ていきましょう。
 
@@ -67,7 +67,7 @@ date_1は、基準日時から1秒経過後の日時を持つインスタンス�
 ### 文字列から作成
 引数に日付や時刻を表す文字列を指定することもできます。その場合、文字列が自動的にその時刻に変換されます。
 ```javascript
-new Date(detestring);
+new Date(datestring);
 ```
 
 文字列の表記形式は厳密に決められていませんが、以下のように記述することができます。
@@ -81,11 +81,11 @@ console.log(date_2); // Fri Jan 03 2020 00:00:00 GMT+0100 (中央ヨーロッパ
 
 
 // 年月日＋時刻を表す文字列
-let date_4 = new Date('2020-01-03T12:30:50');
-let date_5 = new Date('January 3, 2020 12:30:50');
+let date_3 = new Date('2020-01-03T12:30:50');
+let date_4 = new Date('January 3, 2020 12:30:50');
 
+console.log(date_3); // Fri Jan 03 2020 12:30:50 GMT+0100 (中央ヨーロッパ標準時)
 console.log(date_4); // Fri Jan 03 2020 12:30:50 GMT+0100 (中央ヨーロッパ標準時)
-console.log(date_5); // Fri Jan 03 2020 12:30:50 GMT+0100 (中央ヨーロッパ標準時)
 ```
 
 ### 指定要素から日付を作成
