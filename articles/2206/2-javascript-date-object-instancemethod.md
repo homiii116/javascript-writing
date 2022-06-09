@@ -114,7 +114,7 @@ let date = new Date();
 
 // ローカルタイムゾーンでの時間
 console.log(date.getHours()); // 17
-// UCT+0のタイムゾーンでの時間
+// UTC+0のタイムゾーンでの時間
 console.log(date.getUTCHours()); // 15
 ```
 
