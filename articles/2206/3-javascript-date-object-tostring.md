@@ -7,10 +7,10 @@ Dateオブジェクトを作成すると、日時に関するさまざまな情�
 ## 日付と時刻を文字列で取得するメソッド
 Dateオブジェクトの日付や時刻を文字列で取得するメソッドはいくつかありますが、ここでは以下の代表的なメソッドを取り上げます。
 
-* toString()
-* toDateString()
-* toTimeString()
-* toUTCString()
+* ```toString()```
+* ```toDateString()```
+* ```toTimeString()```
+* ```toUTCString()```
 
 これらのメソッドを使うと、Dateオブジェクトが持っている日時の情報を人間が読みやすい形式の文字列に変換することができます。
 
@@ -53,18 +53,8 @@ console.log(date.toTimeString()); // "16:11:58 GMT+0200 (中央ヨーロッパ�
 ```
 Dateオブジェクトの時刻の部分のみを表す文字列が返ります。
 
-以下は、2001年1月31日15時30分の値を持つDateオブジェクトです。
-```toString()```、```toDateString()```、```toTimeString()```を使ってアクセスすると、それぞれの必要な情報のみが取得できることが確認できます。
-```javascript
-let date = new Date(2000, 12, 31, 15, 30);
-
-console.log(date.toString()); // "Wed Jan 31 2001 15:30:00 GMT+0100 (中央ヨーロッパ標準時)"
-console.log(date.toDateString()); // "Wed Jan 31 2001"
-console.log(date.toTimeString()); // "15:30:00 GMT+0100 (中央ヨーロッパ標準時)"
- ```
-
 ## UTC+0のタイムゾーンの値を文字列で取得
-上記のメソッドは、ローカルタイムゾーンで値の文字列を取得するものでした。
+これまでのメソッドは、ローカルタイムゾーンで値の文字列を取得するものでした。
 
 UTC+0のタイムゾーンの値を文字列で取得したい場合には、```toUTCString()```を使います。
 ```javascript
@@ -77,4 +67,56 @@ console.log(date.toUTCString()); // "Thu, 09 Jun 2022 14:26:11 GMT"
 ```
 UTCのタイムゾーンが使用されるため、```toString()```と比較すると、時刻に差が出ていることが分かります。
 
-## 指定したロケールの文字列を取得
+## 指定したロケールの書式で値の文字列を取得
+指定したロケールの書式で日時の値を取得することもできます。
+```toString()```、```toDateString()```、```toTimeString()```それぞれの```to```の直後に```Locale```を記述します。
+```javascript
+Dateオブジェクト.toLocaleString(ロケール);
+Dateオブジェクト.toLocaleDateString(ロケール);
+Dateオブジェクト.toLocaleTimeString(ロケール);
+```
+次のようにロケールを表す引数を指定します。
+```javascript
+let date = new Date(2020, 10, 20, 15, 30);
+
+// 日-月-年-時刻の順
+console.log(date.toLocaleString('en-GB')); // "20/11/2020, 15:30:00"
+console.log(date.toLocaleDateString('en-GB')); // "20/11/2020"
+console.log(date.toLocaleTimeString('en-GB')); // "15:30:00"
+```
+```'en-GB'```を引数に指定すると、英国の書式で値の文字列を取得します。
+
+次のコードは、上から順番に、日本、韓国、フランス、米国のローケールを指定したものです。
+```javascript
+let date = new Date(2020, 10, 20, 15, 30);
+
+// 日本
+console.log(date.toLocaleString('ja-JP')); // "2020/11/20 15:30:00"
+console.log(date.toLocaleDateString('ja-JP')); // "2020/11/20"
+console.log(date.toLocaleTimeString('ja-JP')); // "15:30:00"
+
+// 韓国
+console.log(date.toLocaleString('ko-KR')); // "2020. 11. 20. 오후 3:30:00"
+console.log(date.toLocaleDateString('ko-KR')); // "2020. 11. 20."
+console.log(date.toLocaleTimeString('ko-KR')); // "오후 3:30:00"
+
+// 米国
+console.log(date.toLocaleString('en-US')); // "11/20/2020, 3:30:00 PM"
+console.log(date.toLocaleDateString('en-US')); // "11/20/2020"
+console.log(date.toLocaleTimeString('en-US')); // "3:30:00 PM"
+```
+それぞれ確認すると、書式が少しずつ異なることが分かります。
+このように、見慣れた書式で日時の情報を文字列で取得することができます。
+
+## まとめ
+今回は、Dateオブジェクトの値を文字列で取得する方法について解説しました。
+
+Dateオブジェクトには、値を文字列で取得するためのさまざまなメソッドがあるため、目的に応じて使い分けられると良いでしょう。
+任意の書式で値の文字列を取得することで、開発者やユーザーにとって扱いやすい日時を表現することができます。
+
+## 合わせて読みたいDateオブジェクトシリーズ
+第1回：Dateオブジェクトの作成
+第2回：Dateのインスタンスメソッド-日付・時刻の取得
+第3回：Dateオブジェクトとインスタンスメソッド -文字列の取得
+第4回：Dateオブジェクトとインスタンスメソッド -経過ミリ秒の取得
+第5回：Dateオブジェクトと静的メソッド
