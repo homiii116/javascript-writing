@@ -2,19 +2,32 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>Stopwatch</title>
-<link rel='stylesheet' type='text/css' href='styles.css'>
+<title>タイマーサンプル</title>
 </head>
 <body>
-  <h1>Stopwatch⌚️</h1>
-  <div id="container">
-    <div id="time">00:00:00.000</div>
-    <div id="buttons">
-      <input id="start" type="button" value="start">
-      <input id="stop" type="button" value="stop">
-      <input id="reset" type="button" value="reset">
-    </div>
-  </div>  
-  <script src='main.js'></script>
+  <p>タイマーサンプル</p>
+  <input id="start" type="button" value="start">
+  <input id="stop" type="button" value="stop">
+
+  <script>
+    let counter = 1;
+    let timerID;
+    const startButton = document.getElementById('start');
+    const stopButton = document.getElementById('stop');
+
+    // スタートボタンをクリックすると1秒ずつ関数が実行される
+    startButton.addEventListener('click', () => {
+      timerId = setInterval(() => {
+        console.log(counter + '秒経過しました');
+        counter++;
+      }, 1000);
+    });
+
+    // ストップボタンをクリックするとタイマーが取り消しされる
+    stopButton.addEventListener('click', () => {
+      clearInterval(timerId);
+      console.log('タイマーがキャンセルされました');
+    });
+  </script>
 </body>
 </html>
