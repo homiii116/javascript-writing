@@ -1,4 +1,4 @@
-# 【JavaScriptの基本】getElementとquerySelector
+# 【JavaScriptの基本】要素の検索 -getElementとquerySelector
 
 ## 要素の取得
 DOMの最上位にあるdocumentは、HTMLドキュメント全体を表すオブジェクトです。
