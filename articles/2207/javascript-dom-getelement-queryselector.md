@@ -1,4 +1,21 @@
-# 【JavaScriptの基本】要素の検索 -getElementとquerySelector
+# 【JavaScriptの基本】要素ノードの検索 -getElement
+
+ナビゲーションプロパティを使うと、子ノードや兄弟ノードなどにかんたんにアクセスすることができます。
+しかし、例えばあるクラスを持つ要素だけにアクセスしたいなど、特定の要素ノードに直接アクセスしたい場合には、どうすれば良いのでしょうか。
+
+今回は、getElementと呼ばれる要素を検索するメソッドについて解説していきます。
+
+## getElement
+DOMでは、getElementメソッドを用いて特定の要素ノードを取得することができます。
+getElementメソッドには、次の種類があります。
+
+* ```getElementById```：id属性で検索を行う
+* ```getElementByClassName```：class属性で検索を行う
+* ```getElementByTagName```：タグ名で検索を行う
+* ```getElementByName```：name属性で検索を行う
+
+* getElementBy...
+
 
 ## 要素の取得
 DOMの最上位にあるdocumentは、HTMLドキュメント全体を表すオブジェクトです。
