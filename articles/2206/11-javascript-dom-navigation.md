@@ -10,7 +10,7 @@ DOM上の操作は、まずdocumentオブジェクト（ドキュメントノー
 その後、特定のノードへの移動や取得を行うことができます。
 例えば、```<h1>```で囲まれたテキストの色を変更したい場合にも、```document```を通して要素ノードへアクセスします。
 
-このようなノード間の関係を利用して目的のノードにアクセスすることを、DOMナビゲーションと表現されます。またアクセスに利用されるプロパティをナビゲーションプロパティと呼ばれます。
+このようなノード間の関係を利用して目的のノードにアクセスすることを、DOMナビゲーションと表現されます。またアクセスに利用されるプロパティをナビゲーションプロパティと呼びます。
 
 ノードへのアクセスは、ノードの立ち位置や使用できるプロパティによって異なります。
 各ノードのアクセス方法を見ていきましょう。
@@ -22,11 +22,14 @@ DOM上の操作は、まずdocumentオブジェクト（ドキュメントノー
 document.プロパティ;
 ```
 
-```document.documentElemet```は、```<html>```へのアクセスを行います。これによりhtmlタグ内に書かれている全体のコンテンツにアクセスすることができます。
+* ```document.documentElement```：```<html>```へのアクセスを行う
+これによりhtmlタグ内に書かれている全体のコンテンツにアクセスすることができます。
 
-```document.head```は、```<head>```へのアクセスです。これにより、headタグ内に書かれているコンテンツにアクセスすることができます。
+* ```document.head```：```<head>```へのアクセスを行う
+これにより、headタグ内に書かれているコンテンツにアクセスすることができます。
 
-また、```document.body```は、```<body>```へのアクセスを行います。これはbodyタグ内に書かれているコンテンツ、つまりコンテンツの本文に当たります。
+* ```document.body```：```<body>```へのアクセスを行う
+これはbodyタグ内に書かれているコンテンツ、つまりコンテンツの本文に当たります。
 
 次のコードを見てください。
 ```html
@@ -53,7 +56,7 @@ html, head, bodyタグが用意されているHTMLドキュメントに対して
 
 htmlの中身を参照：
 ```javascript
-console.log(document.documentElemet.innerHTML);
+console.log(document.documentElement.innerHTML);
 
 /* 
   <head>
@@ -64,9 +67,9 @@ console.log(document.documentElemet.innerHTML);
     <p>段落</p>
 
     <script>
-      console.log(document.documentElement.innerHTML); // html
-      console.log(document.head.innerHTML); // head
-      console.log(document.body.innerHTML); // body
+      console.log(document.documentElement.innerHTML); 
+      console.log(document.head.innerHTML); 
+      console.log(document.body.innerHTML); 
     </script>
   </body>
 */
@@ -76,21 +79,21 @@ headの中身を参照：
 ```javascript
 console.log(document.head.innerHTML);
 
-//  <title>タイトル</title>
+// <title>タイトル</title>
 ```
 
 bodyの中身を参照：
 ```javascript
-console.log(document.head.innerHTML);
+console.log(document.body.innerHTML);
 
 /*
   <h1>見出し</h1>
   <p>段落</p>
 
   <script>
-    console.log(document.documentElement.innerHTML); // html
-    console.log(document.head.innerHTML); // head
-    console.log(document.body.innerHTML); // body
+    console.log(document.documentElement.innerHTML); 
+    console.log(document.head.innerHTML); 
+    console.log(document.body.innerHTML); 
   </script>
 */
 ```
@@ -115,7 +118,7 @@ scriptタグがheadタグ内にある場合は、```document.body```はnullに�
 そのため、HTML側でJavaScriptを用意する場合には、scriptタグを用意する位置に注意しましょう。
 
 ## 下位部ノードの構成
-下位部のアクセスには、次のキーワードを理解しておくことが大切です。
+下位部ノードのアクセスには、次のキーワードを理解しておくことが大切です。
 
 * 子ノード：指定された要素の直接の子要素
 * 子孫ノード：指定された要素の中にあるすべての要素
@@ -343,7 +346,6 @@ childNodesプロパティでは、空白によるテキストノードも取得�
 今回は、ノードへのアクセス方法について解説しました。
 
 アクセスしたいノードによってプロパティの使い分けが必要ですが、DOMの構成やノードの関係性を理解していくにつれ慣れていきます。
-
 DOMは奥が深いため、少しずつ練習していきましょう。
 
 ## 合わせて読みたいDOMシリーズ
