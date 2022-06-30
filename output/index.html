@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <h1>見出し</h1>
-  <p>段落</p>
-  <ul>
-    <li>リスト1</li>
-    <li>リスト2</li>
-    <li>リスト3</li>
-  </ul>
+  <p>あなたのお気に入りスポットはどれですか？</p>
+  <label><input type="radio" name="favorite" value="山">山</label>
+  <label><input type="radio" name="favorite" value="海">海</label>
+  <label><input type="radio" name="favorite" value="森">森</label>
 
+  <button onClick="showFavorite()">選択したお気に入りを表示</button>
+  
   <script>
-    console.log(document.body.children); 
-    // HTMLCollection(4) [h1, p, ul, script]
+    function showFavorite() {
+      let elements = document.getElementsByName('favorite');
+
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i].checked) {
+          console.log(elements[i].value);
+        }
+      }
+    }
   </script>
 </body>
 </html>
