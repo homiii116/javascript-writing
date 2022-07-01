@@ -1,4 +1,11 @@
-### セレクター
+# 【JavaScriptの基本】要素ノードの検索 -querySelector
+
+DOMでは、getElementメソッドの他に、querySelectorメソッドを用いて特定の要素ノードを検索することができます。
+さらに幅広い用途に使えるため、知っておくととても便利です。
+
+今回は、querySelectorメソッドを用いた要素ノードの検索方法を解説していきます。
+
+## querySelectorメソッド
 * document.querySelector：指定されたセレクターに合致する文書中のはじめの要素を取得
 * document.querySelectorAll：指定されたセレクターに合致する文書中のすべての要素を取得
 
