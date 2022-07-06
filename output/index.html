@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
-<body>
-  <ul>
-    <li>赤</li>
-    <li>青</li>
-    <li>黄</li>
-  </ul>
-  <ul>
-    <li>緑</li>
-    <li>紫</li>
-    <li>白</li>
-  </ul>
+  <body>
+    <h2>ノードの名前</h2>
+    <div>
+      <p>nodeNameプロパティはすべてのノードが対象</p>
+      <p>tagNameプロパティは要素ノードが対象</p>
+    </div>
   
-  <script>
-    // "text"というclass属性を持つ一番最初の要素を取得
-    let element = document.querySelector('ul > li');
-    console.log(element.innerHTML); // "テキスト1"
-  </script>
-</script>
-</body>
+    <script>
+      console.log(document.nodeName); // #document
+      console.log(document.tagName); // undefined
+  
+      console.log(document.body.firstChild.nodeName); // #text
+      console.log(document.body.firstChild.tagName); // undefined
+  
+      let elem = document.querySelector('div > p:first-child');
+      console.log(elem.nodeName); // P
+      console.log(elem.tagName); // P
+    </script>
+  </body>
 </html>
