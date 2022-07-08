@@ -1,22 +1,12 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h2>ノードの名前</h2>
-    <div>
-      <p>nodeNameプロパティはすべてのノードが対象</p>
-      <p>tagNameプロパティは要素ノードが対象</p>
-    </div>
+<body>
+  <div>Hello!</div>
+
+  <script>
+    let element = document.querySelector('div');
+    element.innerHTML = '<p>How are you?</p>';
   
-    <script>
-      console.log(document.nodeName); // #document
-      console.log(document.tagName); // undefined
-  
-      console.log(document.body.firstChild.nodeName); // #text
-      console.log(document.body.firstChild.tagName); // undefined
-  
-      let elem = document.querySelector('div > p:first-child');
-      console.log(elem.nodeName); // P
-      console.log(elem.tagName); // P
-    </script>
-  </body>
+    console.log(element.innerHTML);
+  </script>
+</body>
 </html>
