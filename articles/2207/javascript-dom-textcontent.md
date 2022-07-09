@@ -1,1 +1,0 @@
-# 【JavaScriptの基本】要素内のテキストの取得と書き込み -textContent
