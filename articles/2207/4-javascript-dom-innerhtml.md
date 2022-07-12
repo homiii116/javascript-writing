@@ -1,4 +1,4 @@
-# 【JavaScriptの基本】要素内のHTMLコンテンツの取得と書き込み -innerHTML
+# 【JavaScriptの基本】HTMLコンテンツの取得と書き込み -innerHTML
 
 HTMLファイルの中身には、コンテンツを構成するためにタグやテキストなどが使われています。
 DOM操作では、何かのアクションをきっかけにタグを変更したり、テキストの内容を変更するなど、ページを変更するために使われる手法があります。
@@ -34,7 +34,7 @@ console.log(element.innerHTML); // "Hello!"
   console.log(element.innerHTML);
 </script>
  ```
-すると今度は、```<body>```に含まれるすべてのコンテンツを取得します。
+すると今度は、```<div>```に含まれるすべてのコンテンツを取得します。
 ```javascript
 /*
 "
@@ -190,4 +190,4 @@ innerHTMLプロパティは、他の類似プロパティなどと混同され�
 第3回：要素ノードの検索 -getElement
 第4回：要素ノードの検索 -guerySelector
 第5回：ノードの種類・名前・値の取得
-第6回：要素内のHTMLコンテンツの取得と書き込み -innerHTML（当記事）
+第6回：HTMLコンテンツの取得と書き込み -innerHTML（当記事）

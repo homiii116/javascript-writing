@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-<body>
-  <div>
-    <a href="https://sample.com">URL</a>
-  </div>
-    
-  <script>
-    let element = document.querySelector('a');
-    element.href = 'https://abcde.com'; // 属性値の設定（変更）
-    element.target = '_blank'; // 属性値の追加
+  <head>
+    <style>
+      body { 
+        color: blue; 
+        margin: 5px;
+      } 
+    </style>
+  </head>
+  <body>
+      
+    <script>
+      let getStyle = getComputedStyle(document.body);
   
-    console.log(element.href); // "https://abcde.com/"
-    console.log(element.target); // "_blank"
-  </script>
-</body>
+      console.log(getStyle.color); // "1px solid rgb(0, 0, 255)"
+      console.log(getStyle.marginBottom); // "5px"
+    </script>
+  </body>
 </html>
