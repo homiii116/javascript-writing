@@ -12,10 +12,10 @@
 どのようなノードを作成したいか、種類によって使用できるメソッドが異なります。
 以下が各ノードに対応するメソッドです。
 
-* createElement()：要素ノードの作成
-* createTextNode()：テキストノードの作成
-* createAttribute()：属性ノードの作成
-* createComment()：コメントノードの作成
+* ```createElement()```：要素ノードの作成
+* ```createTextNode()```：テキストノードの作成
+* ```createAttribute()```：属性ノードの作成
+* ```createComment()```：コメントノードの作成
 
 主にcreateElementメソッドが使用されますが、ノードの作成方法としては共通してインプットしておくと良いでしょう。
 
