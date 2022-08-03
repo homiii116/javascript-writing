@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-<body>
-  <div>
-    <p>Hello!</p>
-  </div>
-  <script>
-    let div = document.querySelector('div');
-  
-    div.insertAdjacentHTML('afterbegin', '<h2>Introduction</h2>');
-    div.insertAdjacentHTML('afterend', '<p>Have a nice day.</p>');
-  </script>
-</body>
+  <head>
+  </head>
+  <body>
+    <span class="a b c d e"></span>
+    
+    <script>
+      let span = document.querySelector('span');
+      let newClass = span.classList.replace('c', 'x');
+
+      span.textContent = span.classList;
+    </script>
+  </body>
 </html>
