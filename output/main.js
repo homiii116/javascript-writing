@@ -1,7 +1,9 @@
-function changeAttributes() {
-  let h2 = document.querySelector('h2');
-  let p = document.querySelector('p');
-
-  h2.removeAttribute('id');
-  p.setAttribute('class', 'text');
+/** 
+ * @param {number} a 数値パラメーター
+ * @param {number} b 数値パラメーター
+ * @return {number} 2つの数値を足した結果
+ */
+ function add(a, b) {
+  return a + b;
 }
+
