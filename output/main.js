@@ -1,3 +1,8 @@
+
+
+
+
+
 /** 
  * @param {number} a 数値パラメーター
  * @param {number} b 数値パラメーター
@@ -6,4 +11,5 @@
  function add(a, b) {
   return a + b;
 }
+
 
