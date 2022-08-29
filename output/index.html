@@ -3,13 +3,14 @@
   <head>
   </head>
   <body>
-    <span class="a b c d e"></span>
-    
-    <script>
-      let span = document.querySelector('span');
-      let newClass = span.classList.replace('c', 'x');
+    <p>Click this button.</p>
+    <input id="elem" type="button" value="button" onclick="console.log('Hello!')">
 
-      span.textContent = span.classList;
+    <script>
+      let elem = document.getElementById('elem');
+      elem.onclick = function() {
+        console.log('Thank you!');
+      };
     </script>
   </body>
 </html>
