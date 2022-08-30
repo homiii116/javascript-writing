@@ -4,13 +4,16 @@
   </head>
   <body>
     <p>Click this button.</p>
-    <input id="elem" type="button" value="button" onclick="console.log('Hello!')">
-
+    <input id="elem" type="button" value="button">
+    
     <script>
+      function sayHi() {
+        console.log('Hi!'); 
+        this.removeEventListener('click', sayHi);
+      }
+    
       let elem = document.getElementById('elem');
-      elem.onclick = function() {
-        console.log('Thank you!');
-      };
+      elem.addEventListener('click', sayHi); 
     </script>
   </body>
 </html>

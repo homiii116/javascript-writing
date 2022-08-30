@@ -1,10 +1,11 @@
 # 【JavaScriptの基本】イベントハンドラ
 
-JavaScriptには、何かの操作のタイミングで任意の処理を紐付けるイベントという機能があります。
+JavaScriptには、何かの操作のタイミングを知らせるイベントという機能があります。
 
 例えば、キーボードを打つと音が鳴ったり、画面をスクロールするとポップアップ画像が表示されたりと、このような処理にもイベントが使われています。
 
-そこで今回は、イベントを登録するためのイベントハンドラについて解説します。
+このイベントに反応するために使われているのがイベントハンドラです。
+今回は、イベントハンドラとは何か、その操作方法について解説します。
 
 ## イベント
 イベントとは、何かが起きた際に知らせる信号です。
@@ -21,7 +22,7 @@ JavaScriptには、何かの操作のタイミングで任意の処理を紐付�
 特定のイベントについては、イベントシリーズの後半の記事で解説します。
 
 ## イベントハンドラ
-イベントハンドラとは、アクションが発生した際に実行する関数を紐付けるための方法です。
+イベントハンドラとは、イベントが発生した際に実行する関数を紐付けるための方法です。
 以下のようなイベントの種類に対応したイベントハンドラを登録することができます。
 
 * ```onclick```：要素がクリックされた時
@@ -32,8 +33,9 @@ JavaScriptには、何かの操作のタイミングで任意の処理を紐付�
 * ```onkeypress```：キーが押された時
 * ```onload```：ページが読み込まれた時　など
 
-このように```on```＋ イベント名のように記述します。
+```on ＋ イベント名```のように記述します。
 
+## イベントハンドラの登録方法
 イベントハンドラを登録する方法はいくつかありますが、ここでは以下の2つの方法を見ていきましょう。
 
 ### HTML属性
@@ -63,7 +65,7 @@ HTML属性に直接コードを書くだけでなく、JavaScriptで関数を作
     getText.textContent = 'You clicked!';
   }
 </script>
-```
+ ```
 
 クリック前：
 ** eventhandler_2 **
@@ -88,7 +90,7 @@ HTML属性に直接コードを書くだけでなく、JavaScriptで関数を作
 <script>
   let elem = document.getElementById('elem');
   elem.onclick = function() {
-    console.log('Clicked');
+    console.log('Clicked'); 
   };
 </script>
  ```
@@ -100,12 +102,11 @@ HTML属性に直接コードを書くだけでなく、JavaScriptで関数を作
 また、別途用意した関数とイベントハンドラとして割り当てることもできます。
 ```javascript
 function sayClicked() {
-  console.log('Clicked');
+  console.log('Clicked'); 
 }
 
 elem.onclick = sayClicked;
 ```
-この場合、関数は```sayClicked()```ではなく、```sayClicked```のように括弧を付けずに記述することに注意してください。
 
 イベントハンドラが登録されているプロパティに対して```null```を代入すると、イベントハンドラを解除することができます。
 ```javascript
@@ -120,7 +121,7 @@ HTML属性に割り当て：
 <input type="button" value="button" onclick="sayClicked()">
 <script>
   function sayClicked() {
-    console.log('Clicked');
+    console.log('Clicked'); 
   }
 </script>
 ```
@@ -134,7 +135,7 @@ DOMプロパティに割り当て：
   }
 
   let elem = document.getElementById('elem');
-  elem.onclick = sayClicked;
+  elem.onclick = sayClicked; 
 </script>
 ```
 
@@ -186,7 +187,7 @@ HTML属性値やDOMプロパティにイベントハンドラを登録した際�
   // 新しいイベントハンドラ
   let elem = document.getElementById('elem');
   elem.onclick = function() {
-    console.log('Thank you!');
+    console.log('Thank you!'); // "Thank you!"
   };
 </script>
 ```
@@ -199,7 +200,7 @@ HTML属性値やDOMプロパティにイベントハンドラを登録した際�
 ```plain
 // ポイント
 * イベントは、ユーザーが行うさまざまなアクション
-* イベントハンドラは、アクションが発生した際に実行する関数を紐付けるための方法
+* イベントハンドラは、イベントが発生した際に実行する関数を紐付けるための方法
 * HTML属性に割り当て：onclick="..."
 * DOMプロパティに割り当て：elem.onclick = function() {}
 * 同じイベントに対して登録できるイベントハンドラは一つのみ
