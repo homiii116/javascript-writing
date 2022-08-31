@@ -3,17 +3,15 @@
   <head>
   </head>
   <body>
-    <p>Click this button.</p>
     <input id="elem" type="button" value="button">
-    
+
     <script>
-      function sayHi() {
-        console.log('Hi!'); 
-        this.removeEventListener('click', sayHi);
+      function showEventType(event) {
+        console.log(event.type);
       }
     
       let elem = document.getElementById('elem');
-      elem.addEventListener('click', sayHi); 
+      elem.addEventListener('click', showEventType); // click
     </script>
   </body>
 </html>
