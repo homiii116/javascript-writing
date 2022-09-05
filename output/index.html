@@ -2,29 +2,29 @@
 <html>
   <head>
   </head>
-  <body>
-    <h2>Do something on this page.</h2>
-    <p id="text"></p>
-    
-    <script>
-      class Event {
-        handleEvent(event) {
-          switch(event.type) {
-            case 'click':
-              text.textContent = 'You clicked!';
-              break;
-            case 'mousemove':
-              text.textContent = 'You moved a mouse!';
-              break;
-          }
-        }
-      }
-    
-      let event = new Event();
-      let text = document.getElementById('text');
-    
-      document.addEventListener('click', event);
-      document.addEventListener('mousemove', event);
-    </script>
+  <style>
+    body {
+      width: 740px;
+    }
+  
+    section,section div,p {
+      border: 2px solid blue;
+      margin: 5px;
+      padding: 5px;
+    }
+  </style>
+  
+  <h1>ターゲット</h1>
+  <section>section
+    <div>div
+      <p>p</p>
+    </div>
+  </section>
+  
+  <script>
+    document.onclick = function(event) {
+      console.log(event.target.tagName);
+    };
+  </script>
   </body>
 </html>
