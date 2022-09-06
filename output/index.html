@@ -2,29 +2,17 @@
 <html>
   <head>
   </head>
-  <style>
-    body {
-      width: 740px;
-    }
+<body>
+  <p>Click this button.</p>
+  <input id="elem" type="button" value="button">
   
-    section,section div,p {
-      border: 2px solid blue;
-      margin: 5px;
-      padding: 5px;
-    }
-  </style>
+  <script>  
+    let elem = document.getElementById('elem');
   
-  <h1>ターゲット</h1>
-  <section>section
-    <div>div
-      <p>p</p>
-    </div>
-  </section>
-  
-  <script>
-    document.onclick = function(event) {
-      console.log(event.target.tagName);
+    elem.onclick = function(event) {
+      console.log('target: ' + event.target.tagName);
+      console.log('currentTarget: ' + event.currentTarget.tagName);
     };
   </script>
-  </body>
+</body>
 </html>
