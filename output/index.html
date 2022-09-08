@@ -3,26 +3,13 @@
   <head>
   </head>
 <body>
-  <style>  
-    #parent,#child {
-      border: 2px solid blue;
-      margin: 5px;
-      padding: 20px;
-      width: 300px;
-    }
-  </style>
-  
-  <h1>親要素にハンドラを登録する場合</h1>
-  <div id="parent">div
-    <input id="child" type="button" value="Click me">
-  </div>
-  
+  <a id="link" href="/">Click me</a>
+
   <script>
-    let parent = document.getElementById('parent');
-    parent.addEventListener('click', (event) => {
-      console.log(`target: ` + event.target.tagName);
-      console.log(`currentTarget: ` + event.currentTarget.tagName);
-    });
+    let link = document.getElementById('link');
+    link.onclick = function() {
+      return false;
+    };
   </script>
 </body>
 </html>
