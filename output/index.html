@@ -3,13 +3,60 @@
   <head>
   </head>
 <body>
-  <a id="link" href="/">Click me</a>
+  <style>
+    table {
+      padding: 20px;
+    }
+  
+    td {
+      border: 1px solid gray;
+      padding: 40px;
+      font-weight: bold;
+    }
+  
+    .bg-color {
+      background-color: yellow;
+    }
+  </style>
+  
+  <table id="parent">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+      <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+      <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
 
   <script>
-    let link = document.getElementById('link');
-    link.onclick = function() {
-      return false;
-    };
+    let id;
+    let table = document.getElementById('parent');
+
+    table.addEventListener('click', (e) => {
+      let target = e.target; // クリックされた場所を取得（ターゲット要素）
+
+      if (target.tagName != 'TD') return; // ターゲット要素がTDでなければ何もしない
+
+      switchClass(target); // クラスを切り替える
+    });
+
+    function switchClass(target) {
+      if (id) { // もしidを持っていたら.bg-colorを外す
+        id.classList.remove('bg-color');
+      } 
+      
+      id = target; 
+      id.classList.add('bg-color'); // ターゲット要素に.bg-colorを追加する
+    }
   </script>
 </body>
 </html>

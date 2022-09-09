@@ -113,38 +113,33 @@
 例えば、このような3×3のマス目に1〜9の数字が振られているとします。
 ```html
 <style>
-  body {
-    width: 740px;
-  }
-
   table {
-    border: 2px solid green;
-    padding: 10px;
+    padding: 20px;
   }
 
   td {
     border: 1px solid gray;
-    padding: 30px;
+    padding: 40px;
     font-weight: bold;
   }
 
-  .panel-color {
+  .bg-color {
     background-color: yellow;
   }
 </style>
 
-<table>
+<table id="parent">
   <tr>
     <td>1</td>
     <td>2</td>
     <td>3</td>
   </tr>
-    <tr>
+  <tr>
     <td>4</td>
     <td>5</td>
     <td>6</td>
   </tr>
-    <tr>
+  <tr>
     <td>7</td>
     <td>8</td>
     <td>9</td>
@@ -159,8 +154,8 @@
 考えるポイントは以下です。
 * ```<td>```ではなく、```<table>```にハンドラを設定する
 * ```event.target```でクリックされたターゲット要素を取得する
-* クリックされたのが```<td>```であればにCSSクラスを付与する
-* 既にクリックされた要素からはCSSクラスを外す
+* クリックされたのが```<td>```であれば```bg-color```クラスを付与する
+* 既にクリックされた要素から```bg-color```クラスを外す
 
 コードはこのようになります。
 ```javascript
@@ -169,9 +164,8 @@ let table = document.getElementById('parent');
 
 table.addEventListener('click', (e) => {
   let target = e.target; // クリックされた場所を取得（ターゲット要素）
-
   if (target.tagName != 'TD') return; // ターゲット要素がTDでなければ何もしない
-  
+
   switchClass(target); // クラスを切り替える
 });
 
@@ -196,7 +190,7 @@ function switchClass(target) {
 今度は、1のマス目の背景色が消え、5のマス目の背景色が黄色になりました。
 
 子要素の```<td>```で発生したイベントを親要素の```<table>```でキャッチすることで、すべての子要素の動きを察知し、CSSクラスを追加したり外したりすることができます。
-このようなコードは、後から```<td>```が増えたとしても、追加でハンドラを登録必要がありません。
+このようなコードは、後から```<td>```が増えたとしても、追加でハンドラを登録する必要がありません。
 
 
 ## まとめ
