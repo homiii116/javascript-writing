@@ -3,60 +3,26 @@
   <head>
   </head>
 <body>
-  <style>
-    table {
-      padding: 20px;
-    }
-  
-    td {
-      border: 1px solid gray;
-      padding: 40px;
-      font-weight: bold;
-    }
-  
-    .bg-color {
-      background-color: yellow;
-    }
-  </style>
-  
-  <table id="parent">
-    <tr>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-    </tr>
-      <tr>
-      <td>4</td>
-      <td>5</td>
-      <td>6</td>
-    </tr>
-      <tr>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-    </tr>
-  </table>
+  <h1 id="text">Hi, this is Hanako!</h1>
 
   <script>
-    let id;
-    let table = document.getElementById('parent');
-
-    table.addEventListener('click', (e) => {
-      let target = e.target; // クリックされた場所を取得（ターゲット要素）
-
-      if (target.tagName != 'TD') return; // ターゲット要素がTDでなければ何もしない
-
-      switchClass(target); // クラスを切り替える
+    let event = new CustomEvent('info', {
+      detail: {
+        name: 'Hanako Yamada',
+        city: 'Tokyo', 
+        age: 25,
+        job: 'Developer'    
+      }
     });
 
-    function switchClass(target) {
-      if (id) { // もしidを持っていたら.bg-colorを外す
-        id.classList.remove('bg-color');
-      } 
-      
-      id = target; 
-      id.classList.add('bg-color'); // ターゲット要素に.bg-colorを追加する
-    }
+    let text = document.getElementById('text');
+
+    text.addEventListener('info', (e) => {
+      console.log('Here is my info');
+      console.log(e.detail)
+    });
+  
+    text.dispatchEvent(event);
   </script>
 </body>
 </html>
