@@ -2,27 +2,15 @@
 <html>
   <head>
   </head>
-<body>
-  <h1 id="text">Hi, this is Hanako!</h1>
-
-  <script>
-    let event = new CustomEvent('info', {
-      detail: {
-        name: 'Hanako Yamada',
-        city: 'Tokyo', 
-        age: 25,
-        job: 'Developer'    
-      }
-    });
-
-    let text = document.getElementById('text');
-
-    text.addEventListener('info', (e) => {
-      console.log('Here is my info');
-      console.log(e.detail)
-    });
+  <button>Open context menu</button>
+  <button id="text">See our original message</button>
   
-    text.dispatchEvent(event);
+  <script>
+    let text = document.getElementById('text');
+    text.addEventListener('contextmenu', e => {
+      e.preventDefault();
+      text.textContent = 'Tada!';
+    });
   </script>
 </body>
 </html>
