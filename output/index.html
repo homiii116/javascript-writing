@@ -2,15 +2,30 @@
 <html>
   <head>
   </head>
-  <button>Open context menu</button>
-  <button id="text">See our original message</button>
+  <style>
+    body {
+      width: 540px;
+    }
+  
+    #outer,#inner {
+      border: 2px solid blue;
+      padding: 10px;
+    }
+  </style>
+  
+  <div id="outer">div
+    <p id="inner">p</p>
+  </div>
   
   <script>
-    let text = document.getElementById('text');
-    text.addEventListener('contextmenu', e => {
-      e.preventDefault();
-      text.textContent = 'Tada!';
-    });
+    let outer = document.getElementById('outer');
+    outer.onmouseenter = e => {
+      console.log('mouseenter target :' + e.target.tagName);
+    };
+  
+    outer.onmouseleave = e => {
+      console.log('mouseleave target :' + e.target.tagName);
+    };
   </script>
 </body>
 </html>

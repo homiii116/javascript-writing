@@ -6,7 +6,7 @@
 
 そこで今回は、マウスイベントのボタン操作について解説します。
 
-## ボタン操作の種類
+## ボタン操作イベントの種類
 マウスイベントには数多くの種類があります。主にボタン操作とカーソル移動に分けられます。
 その中でも、以下が代表的なボタン操作によるマウスイベントです。
 
@@ -44,7 +44,7 @@ button.addEventListener('event', ハンドラ関数);
 ## ボタン操作が発生する順番
 ボタン操作では、発生するイベントの順番が決まっています。
 
-例えば、あるボタンを左クリックする際、最初にボタンを押す瞬間を捉える```mousedown```が発生します。ボタンが押されると、それが離された時に```mouseup```、すべて終えると```click```が発生します。
+例えば、あるボタンを左クリックする際、最初にボタンを押す瞬間を捉える```mousedown```イベントが発生します。ボタンが押されると、それが離された時に```mouseup```イベント、すべて終えると```click```イベントが発生します。
 
 以下は、```click```, ```mousedown```, ```mouseup```が発生する順番を検証した結果です。
 ```html
@@ -81,7 +81,7 @@ button.addEventListener('event', ハンドラ関数);
 
 ** mouseevents_3 **
 
-すると、```click```が2回発生した後、```dblclick```が1回発生していることが分かります。
+すると、```click```イベントが2回発生した後、```dblclick```イベントが1回発生していることが分かります。
 
 このように、ユーザーの一つのアクションは複数のイベントによって起こることがあります。
 
@@ -116,25 +116,25 @@ button.addEventListener('event', ハンドラ関数);
 
 すると、0と2の値を取得していることが確認できます。
 
-ほとんどの場合0か2の値を取りますが、特に```mousedown/mouseup```は、ボタンの種類に関係なくイベントが発生するため、どのボタンがクリックされたのか区別することが可能です。
+ほとんどの場合0か2の値を取りますが、特に```mousedown/mouseup```イベントは、ボタンの種類に関係なくイベントが発生するため、どのボタンがクリックされたのか区別することが可能です。
 
 ## コンテキストメニューのキャンセル
-```contextmenu```は、コンテキストメニューを開こうとした時に発生します。
+```contextmenu```イベントは、コンテキストメニューを開こうとした時に発生します。
 
 通常、マウスの右ボタンをクリックするかコンテキストメニューキーを押すとコンテキストメニューが開くように、デフォルトでその動作が設定されています。
 
 ここでは、その既存の動作をキャンセルし、独自のテキストを表示するようにします。
 ```html
-  <button>Open context menu</button>
-  <button id="text">See our original message</button>
-  
-  <script>
-    let text = document.getElementById('text');
-    text.addEventListener('contextmenu', e => {
-      e.preventDefault();
-      text.textContent = 'Tada!';
-    });
-  </script>
+<button>Open context menu</button>
+<button id="text">See our original message</button>
+
+<script>
+  let text = document.getElementById('text');
+  text.addEventListener('contextmenu', e => {
+    e.preventDefault();
+    text.textContent = 'Tada!';
+  });
+</script>
  ```
 
 一つ目のボタンを右クリックすると、コンテキストメニューが開きます。
@@ -154,9 +154,6 @@ button.addEventListener('event', ハンドラ関数);
 * ボタン操作は発生する順番が決まっていて、複数のボタン操作によって一つのアクションが発生することがある
 * buttonプロパティで、イベントが発生したマウスのボタンを調べることができる
 ```
-
-マウスの動き一つとっても、複数のイベントが組み合わさってできているように、思っているよりも複雑です。
-まずはマウスイベントの中でも基礎的なボタンの操作を覚えていきましょう。
 
 ## 合わせて読みたいイベントシリーズ
 第1回：イベントハンドラ
