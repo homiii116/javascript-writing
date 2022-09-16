@@ -2,30 +2,21 @@
 <html>
   <head>
   </head>
-  <style>
-    body {
-      width: 540px;
-    }
-  
-    #outer,#inner {
-      border: 2px solid blue;
-      padding: 10px;
-    }
-  </style>
-  
-  <div id="outer">div
-    <p id="inner">p</p>
-  </div>
-  
+<body>
+  <button id="btn">Shift key + Click</button>
+  <p id="msg"></p>
+
   <script>
-    let outer = document.getElementById('outer');
-    outer.onmouseenter = e => {
-      console.log('mouseenter target :' + e.target.tagName);
-    };
-  
-    outer.onmouseleave = e => {
-      console.log('mouseleave target :' + e.target.tagName);
-    };
+    let btn = document.getElementById('btn');
+    let msg = document.getElementById('msg');
+
+    btn.addEventListener('click', e => {
+      if (e.shiftKey) {
+        msg.innerHTML += 'Success!<br>';
+      } else {
+        msg.innerHTML += 'Press Shift key and Click!<br>';
+      }
+    });
   </script>
 </body>
 </html>
