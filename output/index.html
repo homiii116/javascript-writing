@@ -3,20 +3,21 @@
   <head>
   </head>
 <body>
-  <button id="btn">Shift key + Click</button>
-  <p id="msg"></p>
-
+  <p>Press Shift + z</p>
+  <textarea id="area"></textarea>
+  <p id="text"></p>
+  
   <script>
-    let btn = document.getElementById('btn');
-    let msg = document.getElementById('msg');
-
-    btn.addEventListener('click', e => {
-      if (e.shiftKey) {
-        msg.innerHTML += 'Success!<br>';
-      } else {
-        msg.innerHTML += 'Press Shift key and Click!<br>';
+    function showMessage(e) {
+      if (e.shiftKey && e.code == 'KeyZ') {
+        let text = document.getElementById('text');
+        text.innerHTML = 'You pressed Shift + z!'
+        console.log('You pressed Shift + z!');
       }
-    });
+    }
+
+    let area = document.getElementById('area');
+    area.addEventListener('keydown', showMessage);
   </script>
 </body>
 </html>
