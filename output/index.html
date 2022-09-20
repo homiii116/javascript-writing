@@ -3,20 +3,17 @@
   <head>
   </head>
 <body>
-  <p>Press Shift + z</p>
-  <textarea id="area"></textarea>
-  <p id="text"></p>
-  
-  <script>
-    function showMessage(e) {
-      if (e.shiftKey && e.code == 'KeyZ') {
-        let text = document.getElementById('text');
-        text.innerHTML = 'You pressed <b>Shift + z!'
-      }
-    }
+  <style>
+    li { cursor: pointer; }
+      :focus { font-weight: bold; }
+  </style>
 
-    let area = document.getElementById('area');
-    area.addEventListener('keydown', showMessage);
-  </script>
+  <ul>
+    <li tabindex="1">Tabindex 1</li>
+    <li tabindex="0">Tabindex 0</li>
+    <li tabindex="2">Tabindex 2</li>
+    <li tabindex="3">Tabindex 3</li>
+    <li tabindex="-1">Tabindex -1</li>
+  </ul>
 </body>
 </html>
