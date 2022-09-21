@@ -93,7 +93,7 @@ let phrase = "Hi,\nI am learning JavaScript\nIt's so fun!"
 
 console.log(phrase);
 /*
-"Hi,
+"Hi, 
 I am learning JavaScript
 It's so fun!"
 */
