@@ -3,17 +3,31 @@
   <head>
   </head>
 <body>
-  <style>
-    li { cursor: pointer; }
-      :focus { font-weight: bold; }
-  </style>
+  <input type="text" id="input">
+  <p id="log"></p>
+  
+  <script>
+    let log = document.getElementById('log');
 
-  <ul>
-    <li tabindex="1">Tabindex 1</li>
-    <li tabindex="0">Tabindex 0</li>
-    <li tabindex="2">Tabindex 2</li>
-    <li tabindex="3">Tabindex 3</li>
-    <li tabindex="-1">Tabindex -1</li>
-  </ul>
+    function noCopy(e) {
+      log.innerHTML += 'コピー操作は禁止されています<br>';
+      e.preventDefault();
+    }
+  
+    function noCut(e) {
+      log.innerHTML += 'カット操作は禁止されています<br>';
+      e.preventDefault();
+    }
+  
+    function noPaste(e) {
+      log.innerHTML += 'ペースト操作は禁止されています<br>';
+      e.preventDefault();
+    }
+  
+    let input = document.getElementById('input');
+    input.oncopy = noCopy;
+    input.oncut = noCut;
+    input.onpaste = noPaste;
+  </script>
 </body>
 </html>
