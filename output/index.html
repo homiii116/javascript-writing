@@ -3,31 +3,19 @@
   <head>
   </head>
 <body>
-  <input type="text" id="input">
+  <form id="form">
+    <label>Your name：<input type="text" id="name"></label>
+    <input type="submit" value="Submit">
+  </form>
   <p id="log"></p>
   
   <script>
+    let form = document.getElementById('form');
     let log = document.getElementById('log');
-
-    function noCopy(e) {
-      log.innerHTML += 'コピー操作は禁止されています<br>';
-      e.preventDefault();
-    }
   
-    function noCut(e) {
-      log.innerHTML += 'カット操作は禁止されています<br>';
-      e.preventDefault();
-    }
-  
-    function noPaste(e) {
-      log.innerHTML += 'ペースト操作は禁止されています<br>';
-      e.preventDefault();
-    }
-  
-    let input = document.getElementById('input');
-    input.oncopy = noCopy;
-    input.oncut = noCut;
-    input.onpaste = noPaste;
+    form.addEventListener('submit', () => {
+      log.textContent = 'Form submitted!';
+    });
   </script>
 </body>
 </html>
