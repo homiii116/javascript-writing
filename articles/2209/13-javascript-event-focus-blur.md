@@ -20,6 +20,7 @@
 次のコードを見てください。
 * ```focus```：入力欄にフォーカスが当てられている間、背景色をピンクにする
 * ```blur```：入力欄からフォーカスが外れた時に背景色を白に戻す
+
 ```html
 <p>Your email:</p>
 <form>
@@ -73,7 +74,7 @@
     e.target.style.background = "";
   });
 </script>
- ```
+```
 
 ** focus-blur_3 **
 
